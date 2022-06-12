@@ -113,18 +113,18 @@ def  minimization(obs):
         llseries.append(fobj)
     
     np.random.seed((os.getpid() * int(time.time())) % 123456789)
-    bnds = ((0,1),(-10,10),\
-            (-10,10),(-10,10),\
-            (-10,10),(-10,10),(-10,10),(-10,10),\
-            (-10,10),(-10,10),(-10,10),(-10,10),\
-            (-10,10),(-10,10),(-10,10),(-10,10),\
-            (-10,10),(-10,10),(-10,10),(-10,10),(-10,10),(-10,10))
+    bnds = ((0,1),(-5,5),\
+            (-5,5),(-5,5),\
+            (-5,5),(-5,5),(-5,5),(-5,5),\
+            (-5,5),(-5,5),(-5,5),(-5,5),\
+            (-5,5),(-5,5),(-5,5),(-5,5),\
+            (-5,5),(-5,5),(-5,5),(-5,5),(-5,5),(-5,5))
 
 
     stable = False
     n_trials = 0
     while stable == False:
-        start = np.concatenate((np.random.uniform(0,1,1), np.random.uniform(-10,10,3), np.random.uniform(-10,10,18)))
+        start = np.concatenate((np.random.uniform(0,1,1), np.random.uniform(-5,5,21)))
         try:
             μ0, Σ0, Ass, Σs = init_kf(start)
             n_trials +=1
