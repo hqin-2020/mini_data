@@ -10,7 +10,6 @@ np.set_printoptions(suppress = True)
 def  minimization(obs):
     obs_series = obs
 
-
     def init_kf(θ):
     
         λ, η, b11, b21, As11, As12, As13, As14, As21, As22, As23, As24, As31, As32, As33, As34, Bs11, Bs21, Bs22, Bs31, Bs32, Bs33 = θ
@@ -125,7 +124,7 @@ def  minimization(obs):
     stable = False
     n_trials = 0
     while stable == False:
-        start = np.concatenate((np.random.uniform(0,1,1), np.random.uniform(-10,10,3), np.random.uniform(-5,5,18)))
+        start = np.concatenate((np.random.uniform(0,1,1), np.random.uniform(-10,10,3), np.random.uniform(-10,10,18)))
         try:
             μ0, Σ0, Ass, Σs = init_kf(start)
             n_trials +=1
