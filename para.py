@@ -11,7 +11,7 @@ from Minimization import minimization
 from concurrent.futures import ProcessPoolExecutor
 obs_series = np.genfromtxt('obs_series.csv', delimiter=',')
 
-start_trials = 14*100
+start_trials = 14*50
 
 obs_series = [obs_series for _ in range(start_trials)] 
 
